@@ -23,6 +23,26 @@
   <link rel="preconnect" target="_blank" href="https://fonts.googleapis.com">
   <link rel="preconnect" target="_blank" href="https://fonts.gstatic.com" crossorigin>
   <link target="_blank" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <script
+		src="https://code.jquery.com/jquery-3.4.1.js"
+		integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
+		crossorigin="anonymous"></script>
+	<script>
+		function SubForm (){
+			$.ajax({
+				url:"https://api.apispreadsheets.com/data/xrAWPtoW9YZqWRff/",
+				type:"post",
+				data:$("#myForm").serializeArray(),
+				success: function(){
+					alert("Form Data Submitted :)")
+          window.location.reload();
+				},
+				error: function(){
+					alert("There was an error :(")
+				}
+			});
+		}
+	</script>
 </head>
 
 <body>
@@ -718,15 +738,11 @@ I'm a dedicated engineering graduate with a strong passion for technology. I am 
             </li>
 
             <li class="filter-item">
-              <button data-filter-btn>Web design</button>
+              <button data-filter-btn>Web Applications</button>
             </li>
 
             <li class="filter-item">
-              <button data-filter-btn>Applications</button>
-            </li>
-
-            <li class="filter-item">
-              <button data-filter-btn>Web development</button>
+              <button data-filter-btn>Open-Source</button>
             </li>
 
           </ul>
@@ -750,15 +766,11 @@ I'm a dedicated engineering graduate with a strong passion for technology. I am 
               </li>
 
               <li class="select-item">
-                <button data-select-item>Web design</button>
+                <button data-select-item>Web Applications</button>
               </li>
 
               <li class="select-item">
-                <button data-select-item>Applications</button>
-              </li>
-
-              <li class="select-item">
-                <button data-select-item>Web development</button>
+                <button data-select-item>Open-Source</button>
               </li>
 
             </ul>
@@ -767,18 +779,18 @@ I'm a dedicated engineering graduate with a strong passion for technology. I am 
 
           <ul class="project-list">
 
-            <li class="project-item  active" data-filter-item data-category="web development">
-              <a target="_blank" href="#">
+            <li class="project-item  active" data-filter-item data-category="web applications">
+              <a target="_blank" href="https://admissions.kct.ac.in/">
 
                 <figure class="project-img">
                   <div class="project-item-icon-box">
                     <ion-icon name="eye-outline"></ion-icon>
                   </div>
 
-                  <img src="./assets/images/project-1.jpg" alt="finance" loading="lazy">
+                  <img src="./assets/images/admissions.png" alt="finance" loading="lazy">
                 </figure>
 
-                <h3 class="project-title">Finance</h3>
+                <h3 class="project-title">Kumaraguru Admissions</h3>
 
                 <p class="project-category">Web development</p>
 
@@ -786,7 +798,7 @@ I'm a dedicated engineering graduate with a strong passion for technology. I am 
             </li>
 
             <li class="project-item  active" data-filter-item data-category="web development">
-              <a target="_blank" href="#">
+              <a target="_blank" href="https://bitbucket.org/dhanushkumar-s-g/gomailer/src/master/">
 
                 <figure class="project-img">
                   <div class="project-item-icon-box">
@@ -1143,17 +1155,15 @@ I'm a dedicated engineering graduate with a strong passion for technology. I am 
 
         <section class="mapbox" data-mapbox>
           <figure>
-            <iframe
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d199666.5651251294!2d-121.58334177520186!3d38.56165006739519!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x809ac672b28397f9%3A0x921f6aaa74197fdb!2sSacramento%2C%20CA%2C%20USA!5e0!3m2!1sen!2sbd!4v1647608789441!5m2!1sen!2sbd"
-              width="400" height="300" loading="lazy"></iframe>
-          </figure>
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d125322.44175093315!2d76.88466167482568!3d11.014126249669031!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ba859af2f971cb5%3A0x2fc1c81e183ed282!2sCoimbatore%2C%20Tamil%20Nadu%2C%20India!5e0!3m2!1sen!2sus!4v1697371368568!5m2!1sen!2sus" width="400" height="300"
+             style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
         </section>
 
         <section class="contact-form">
 
           <h3 class="h3 form-title">Contact Form</h3>
 
-          <form action="#" class="form" data-form>
+          <form class="form" data-form id="myForm">
 
             <div class="input-wrapper">
               <input type="text" name="fullname" class="form-input" placeholder="Full name" required data-form-input>
@@ -1162,13 +1172,13 @@ I'm a dedicated engineering graduate with a strong passion for technology. I am 
             </div>
 
             <textarea name="message" class="form-input" placeholder="Your Message" required data-form-input></textarea>
-
-            <button class="form-btn" type="submit" disabled data-form-btn>
-              <ion-icon name="paper-plane"></ion-icon>
-              <span>Send Message</span>
-            </button>
-
+            
           </form>
+
+          <button class="form-btn" type="submit" onclick="SubForm()" data-form-btn>
+            <ion-icon name="paper-plane"></ion-icon>
+            <span>Send Message</span>
+          </button>
 
         </section>
 
